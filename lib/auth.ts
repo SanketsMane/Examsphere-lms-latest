@@ -58,7 +58,7 @@ const authOptions = {
     async sendResetPassword({ user, url }: { user: any; url: string }) {
       await sendEmail({
         to: user.email,
-        subject: "KIDOKOOL - Reset Your Password",
+        subject: "EXAMSPHERE - Reset Your Password",
         html: `
           <!DOCTYPE html>
           <html>
@@ -84,7 +84,7 @@ const authOptions = {
           <body>
             <div class="container">
               <div class="header">
-                <div class="logo">KIDOKOOL</div>
+                <div class="logo">EXAMSPHERE</div>
                 <div class="subtitle">Learning Management System</div>
               </div>
               
@@ -106,9 +106,9 @@ const authOptions = {
               </div>
               
               <div class="footer">
-                <div class="footer-text"><strong>KIDOKOOL</strong></div>
+                <div class="footer-text"><strong>EXAMSPHERE</strong></div>
                 <div class="footer-text">Learning Management System</div>
-                <div class="footer-text">© 2026 KIDOKOOL. All rights reserved.</div>
+                <div class="footer-text">© 2026 EXAMSPHERE. All rights reserved.</div>
               </div>
             </div>
           </body>
@@ -148,7 +148,7 @@ const authOptions = {
         try {
           const success = await sendEmail({
             to: email,
-            subject: "KIDOKOOL - Verify your email",
+            subject: "EXAMSPHERE - Verify your email",
             html: `
               <!DOCTYPE html>
               <html>
@@ -177,7 +177,7 @@ const authOptions = {
               <body>
                 <div class="container">
                   <div class="header">
-                    <div class="logo">KIDOKOOL</div>
+                    <div class="logo">EXAMSPHERE</div>
                     <div class="subtitle">Learning Management System</div>
                   </div>
                   
@@ -197,9 +197,9 @@ const authOptions = {
                   </div>
                   
                   <div class="footer">
-                    <div class="footer-text"><strong>KIDOKOOL</strong></div>
+                    <div class="footer-text"><strong>EXAMSPHERE</strong></div>
                     <div class="footer-text">Learning Management System</div>
-                    <div class="footer-text">© 2026 KIDOKOOL. All rights reserved.</div>
+                    <div class="footer-text">© 2026 EXAMSPHERE. All rights reserved.</div>
                   </div>
                 </div>
               </body>
@@ -231,7 +231,7 @@ const authOptions = {
 
             const client = twilio(accountSid, authToken);
             await client.messages.create({
-                body: `Your Kidokool verification code is: ${code}`,
+                body: `Your Examsphere verification code is: ${code}`,
                 from: fromNumber,
                 to: phoneNumber
             });
@@ -242,7 +242,7 @@ const authOptions = {
         }
       },
       signUpOnVerification: {
-        getTempEmail: (phone) => `${phone}@temp.kidokool.com`,
+        getTempEmail: (phone) => `${phone}@temp.examsphere.com`,
         getTempName: (phone) => `User ${phone}`,
       },
     }),

@@ -85,7 +85,7 @@ export async function generateCertificate(courseId: string) {
                     certificateNumber: certNumber,
                     studentName: session.name || "Student",
                     courseName: course.title,
-                    teacherName: course.user?.name || "Kidokool Instructor",
+                    teacherName: course.user?.name || "Examsphere Instructor",
                     completionDate: new Date(),
                 },
             });

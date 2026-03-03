@@ -1,66 +1,67 @@
 "use client";
 
 import Link from "next/link";
-import { Sparkles, ArrowRight, Search, Code, Palette, Music, Calculator, Megaphone, Smartphone, BrainCircuit } from "lucide-react";
+import { Sparkles, ArrowRight, Zap, Leaf, Calculator, FlaskConical, Target, Award } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const SCENARIOS = [
     {
-        text: "I want to learn React Native...",
-        resultTitle: "React Native Expert",
-        resultSubtitle: "Mobile Development",
-        icon: Smartphone,
+        text: "Physics: Rolling Motion dynamics...",
+        resultTitle: "Physics Specialist",
+        resultSubtitle: "IIT-JEE / NEET Prep",
+        icon: Zap,
         color: "bg-blue-100 text-blue-600",
         ring: "ring-blue-100",
         gradient: "from-blue-500 to-indigo-600"
     },
     {
-        text: "Need help with Guitar...",
-        resultTitle: "Guitar Instructor",
-        resultSubtitle: "Music & Arts",
-        icon: Music,
-        color: "bg-amber-100 text-amber-600",
-        ring: "ring-amber-100",
-        gradient: "from-amber-400 to-orange-500"
-    },
-    {
-        text: "Calculus tutor for exam...",
-        resultTitle: "Math Professor",
-        resultSubtitle: "Academic Support",
-        icon: Calculator,
+        text: "Biology: Photosynthesis Cycle...",
+        resultTitle: "Biology Expert",
+        resultSubtitle: "NEET UG Focus",
+        icon: Leaf,
         color: "bg-emerald-100 text-emerald-600",
         ring: "ring-emerald-100",
         gradient: "from-emerald-400 to-green-600"
     },
     {
-        text: "Digital Marketing Strategy...",
-        resultTitle: "Marketing Guru",
-        resultSubtitle: "Business Growth",
-        icon: Megaphone,
+        text: "Math: Complex Integration...",
+        resultTitle: "Mathematics Guru",
+        resultSubtitle: "JEE Advanced Support",
+        icon: Calculator,
+        color: "bg-amber-100 text-amber-600",
+        ring: "ring-amber-100",
+        gradient: "from-amber-400 to-orange-500"
+    },
+    {
+        text: "Chemistry: Organic Reactions...",
+        resultTitle: "Chemistry Professor",
+        resultSubtitle: "Board & Entrance",
+        icon: FlaskConical,
         color: "bg-pink-100 text-pink-600",
         ring: "ring-pink-100",
         gradient: "from-pink-500 to-rose-500"
     },
     {
-        text: "UI/UX Design principles...",
-        resultTitle: "Senior Designer",
-        resultSubtitle: "Creative Design",
-        icon: Palette,
+        text: "Last year NEET Cut-off...",
+        resultTitle: "Exam Counselor",
+        resultSubtitle: "Guidance & Strategy",
+        icon: Target,
         color: "bg-purple-100 text-purple-600",
         ring: "ring-purple-100",
         gradient: "from-purple-500 to-violet-600"
     },
     {
-        text: "Intro to Machine Learning...",
-        resultTitle: "AI Specialist",
-        resultSubtitle: "Data Science",
-        icon: BrainCircuit,
+        text: "MHT-CET Mock Test Score...",
+        resultTitle: "Test Analyst",
+        resultSubtitle: "Academic Progress",
+        icon: Award,
         color: "bg-cyan-100 text-cyan-600",
         ring: "ring-cyan-100",
         gradient: "from-cyan-500 to-blue-600"
     }
 ];
+// Author: Sanket
 
 export function VibeCard() {
     const [scenarioIndex, setScenarioIndex] = useState(0);
@@ -73,6 +74,8 @@ export function VibeCard() {
     // 3: Pause
 
     const currentScenario = SCENARIOS[scenarioIndex];
+    // Destructure icon to a capitalized const for valid JSX rendering - Author: Sanket
+    const CurrentIcon = currentScenario.icon;
 
     useEffect(() => {
         let timeout: NodeJS.Timeout;
@@ -128,11 +131,11 @@ export function VibeCard() {
                         <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-white tracking-tight leading-[1.1] mb-6 drop-shadow-sm">
                             Find the perfect <br className="hidden md:block" />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/70">
-                                Mentor for You
+                                Faculty for You
                             </span>
                         </h2>
                         <p className="text-lg md:text-xl text-white/90 font-medium leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0">
-                            From coding to creative arts, get matched with expert tutors who fit your learning style.
+                            From Physics to Biology, get matched with top-rankers and expert faculty who simplify complex concepts.
                         </p>
 
                         <Link
@@ -180,9 +183,8 @@ export function VibeCard() {
                                                 <span className={`w-0.5 h-6 ml-0.5 animate-blink ${step >= 1 ? 'bg-transparent' : 'bg-slate-400'}`} />
                                             </div>
 
-                                            {/* The Search Button */}
-                                            <div className={`h-12 w-12 rounded-xl flex items-center justify-center transition-all duration-500 ${step >= 1 ? 'scale-105 shadow-md ' + currentScenario.color.replace('text-', 'bg-').split(' ')[0] + ' text-white' : 'bg-slate-100 text-slate-400'
-                                                }`}>
+                                            {/* The Search Button - icon color derived from scenario */}
+                                             <div className={`h-12 w-12 rounded-xl flex items-center justify-center transition-all duration-500 ${step >= 1 ? `scale-105 shadow-md ${currentScenario.color.split(' ')[0].replace('text-', 'bg-')} text-white` : 'bg-slate-100 text-slate-400'}`}>
                                                 <Sparkles className={`w-6 h-6 ${step >= 1 ? 'animate-pulse' : ''}`} />
                                             </div>
                                         </div>
@@ -206,7 +208,7 @@ export function VibeCard() {
                                                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent translate-x-[-150%] animate-shine" />
 
                                                         <div className={`w-14 h-14 rounded-2xl flex items-center justify-center ${currentScenario.color} shadow-sm shrink-0`}>
-                                                            <currentScenario.icon className="w-7 h-7" />
+                                                            <CurrentIcon className="w-7 h-7" />
                                                         </div>
                                                         <div className="flex-1 min-w-0">
                                                             <h4 className="text-lg font-bold text-slate-900 truncate">{currentScenario.resultTitle}</h4>
@@ -218,7 +220,7 @@ export function VibeCard() {
                                                                     <div key={i} className="w-6 h-6 rounded-full border-2 border-white bg-slate-200" />
                                                                 ))}
                                                             </div>
-                                                            <span className="text-xs text-slate-400 font-semibold">120+ Tutors</span>
+                                                            <span className="text-xs text-slate-400 font-semibold">120+ Expert Faculty</span>
                                                         </div>
                                                     </div>
                                                 </motion.div>

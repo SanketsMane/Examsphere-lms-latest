@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Hostinger VPS Deployment Script for KIDOKOOL LMS
+# Hostinger VPS Deployment Script for EXAMSPHERE LMS
 # This script deploys the local code to the Hostinger VPS
 
 set -e  # Exit on error
@@ -9,8 +9,8 @@ set -e  # Exit on error
 VPS_IP="147.93.29.199"
 VPS_USER="root"
 VPS_PASS="Bksun@1708@@"
-APP_NAME="kidokool-lms"
-REMOTE_DIR="/root/kidokool-lms"
+APP_NAME="examsphere-lms"
+REMOTE_DIR="/root/examsphere-lms"
 
 # Colors for output
 GREEN='\033[0;32m'
@@ -20,7 +20,7 @@ YELLOW='\033[1;33m'
 NC='\033[0m'
 
 echo -e "${BLUE}========================================${NC}"
-echo -e "${BLUE}  KIDOKOOL LMS - Hostinger Deployment  ${NC}"
+echo -e "${BLUE}  EXAMSPHERE LMS - Hostinger Deployment  ${NC}"
 echo -e "${BLUE}========================================${NC}"
 
 # Ensure remote directory exists

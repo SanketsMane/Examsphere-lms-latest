@@ -8,7 +8,7 @@ async function main() {
 
     // 1. Find or create a user
     let user = await prisma.user.findFirst({
-        where: { email: 'test-teacher@kidokool.xyz' }
+        where: { email: 'test-teacher@examsphere.xyz' }
     });
 
     if (!user) {
@@ -16,7 +16,7 @@ async function main() {
         user = await prisma.user.create({
             data: {
                 name: "Test Teacher",
-                email: "test-teacher@kidokool.xyz",
+                email: "test-teacher@examsphere.xyz",
                 emailVerified: true,
                 role: "teacher"
             }

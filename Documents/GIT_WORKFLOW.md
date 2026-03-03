@@ -217,9 +217,9 @@ git push origin --tags
 ## 📊 Repository Insights
 
 ### Current Status
-- **Main Branch:** Production-ready KIDOKOOL LMS Marketplace
+- **Main Branch:** Production-ready EXAMSPHERE LMS Marketplace
 - **Dev Branch:** Ready for feature development
-- **Repository URL:** https://github.com/SanketsMane/KIDOKOOL-LMS-Marketplace.git
+- **Repository URL:** https://github.com/SanketsMane/EXAMSPHERE-LMS-Marketplace.git
 - **Developer:** Sanket Mane (@SanketsMane)
 - **License:** MIT License
 

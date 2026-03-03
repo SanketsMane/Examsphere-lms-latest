@@ -37,11 +37,11 @@ async function main() {
         console.log("Creating new settings row...");
         await prisma.siteSettings.create({
             data: {
-                siteName: "Kidokool LMS",
-                siteUrl: "https://kidokool.xyz",
+                siteName: "Examsphere LMS",
+                siteUrl: "https://examsphere.xyz",
                 razorpayKeyId: keyId,
                 razorpayKeySecret: keySecret,
-                contactEmail: "admin@kidokool.xyz"
+                contactEmail: "admin@examsphere.xyz"
             }
         });
     }

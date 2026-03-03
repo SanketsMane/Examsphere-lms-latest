@@ -68,7 +68,7 @@ export function FeaturedCourses({ courses }: FeaturedCoursesProps) {
             <div className="container mx-auto px-4">
                 <div className="text-center mb-10">
                     <h2 className="text-3xl md:text-4xl font-bold text-[#011E21] dark:text-white mb-8">
-                        The world's best online courses at one place
+                        Top Rated JEE, NEET & CET Courses
                     </h2>
                 </div>
 
@@ -78,7 +78,7 @@ export function FeaturedCourses({ courses }: FeaturedCoursesProps) {
                     <button suppressHydrationWarning className="absolute left-[-20px] top-1/2 -translate-y-1/2 w-10 h-10 bg-white dark:bg-card border border-gray-100 dark:border-gray-800 rounded-full shadow-lg flex items-center justify-center z-10 hover:scale-110 transition-transform hidden lg:flex">
                         <ChevronLeft className="w-5 h-5 text-gray-600 dark:text-gray-300" />
                     </button>
-                    <button suppressHydrationWarning className="absolute right-[-20px] top-1/2 -translate-y-1/2 w-10 h-10 bg-[#4FB5C6] rounded-full shadow-lg flex items-center justify-center z-10 hover:scale-110 transition-transform hidden lg:flex">
+                    <button suppressHydrationWarning className="absolute right-[-20px] top-1/2 -translate-y-1/2 w-10 h-10 bg-primary rounded-full shadow-lg flex items-center justify-center z-10 hover:scale-110 transition-transform hidden lg:flex">
                         <ChevronRight className="w-5 h-5 text-white" />
                     </button>
 
@@ -168,7 +168,7 @@ export function FeaturedCourses({ courses }: FeaturedCoursesProps) {
 
                 <div className="text-center mt-12">
                     <Link href="/courses">
-                        <button suppressHydrationWarning className="bg-[#4FB5C6] hover:bg-[#3da3b4] text-white px-8 py-3 rounded-full font-bold shadow-lg shadow-cyan-200/50 transition-all hover:scale-105">
+                        <button suppressHydrationWarning className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full font-bold shadow-lg shadow-indigo-200/50 transition-all hover:scale-105">
                             View All Courses
                         </button>
                     </Link>

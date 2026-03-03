@@ -1,7 +1,7 @@
 
 const fs = require('fs');
 
-const configPath = '/etc/nginx/sites-available/kidokool-lms';
+const configPath = '/etc/nginx/sites-available/examsphere-lms';
 let config = '';
 
 try {

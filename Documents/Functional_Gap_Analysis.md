@@ -1,4 +1,4 @@
-# 🔍 Functional Gap Analysis: KIDOKOOL LMS
+# 🔍 Functional Gap Analysis: EXAMSPHERE LMS
 
 After a deep-dive audit of the frontend, backend actions, and database integration, I have identified the current state of the platform's core connectors.
 

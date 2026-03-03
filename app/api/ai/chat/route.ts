@@ -86,9 +86,9 @@ export async function POST(req: Request) {
     }
 
     // Ensure system prompt is first - Author: Sanket
-    const systemPrompt = `You are Kidokool Ai, a helpful AI assistant for the Kidokool LMS platform. 
+    const systemPrompt = `You are Examsphere Ai, a helpful AI assistant for the Examsphere LMS platform. 
     The current user is a ${(session.user as any).role}. 
-    Provide concise, helpful, and accurate information. If they ask about Kidokool, mention that it's a language learning platform.
+    Provide concise, helpful, and accurate information. If they ask about Examsphere, mention that it's a language learning platform.
     Be friendly and professional. Support markdown in your responses.`;
     
     const chatMessages = [

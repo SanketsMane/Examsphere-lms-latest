@@ -1,20 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { User, MessageCircle, Users, Star } from "lucide-react";
+import { User, MessageCircle, Users, Star, Target, Award } from "lucide-react";
 import Image from "next/image";
 
 const features = [
     {
         icon: User,
-        title: "Professional Tutors",
-        description: "Choose from over a myriad of professional & experienced teachers to be fluent in any language.",
-        color: "bg-blue-500",
+        title: "Top Tier Faculty",
+        description: "Learn from IITians and Medical graduates with years of entrance coaching experience.",
+        color: "bg-indigo-600",
         visual: (
             <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-gray-800 transform group-hover:scale-105 transition-transform duration-500">
                 <Image 
-                    src="/images/marketing/tutors.png" 
-                    alt="Professional Tutors" 
+                    src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop" 
+                    alt="Top Tier Faculty" 
                     fill 
                     className="object-cover"
                 />
@@ -23,15 +23,15 @@ const features = [
         )
     },
     {
-        icon: MessageCircle,
-        title: "1-on-1 Live sessions",
-        description: "Connect with your teachers via 1-on-1 live chat sessions and build a deeper understanding of a language.",
-        color: "bg-teal-500",
+        icon: Target,
+        title: "CBT Mock Tests",
+        description: "Practice on a platform that mirrors the actual JEE/NEET computer-based test environment.",
+        color: "bg-emerald-600",
         visual: (
             <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-gray-800 transform group-hover:scale-105 transition-transform duration-500">
                 <Image 
-                    src="/images/marketing/live-sessions.png" 
-                    alt="1-on-1 Live sessions" 
+                    src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2070&auto=format&fit=crop" 
+                    alt="CBT Mock Tests" 
                     fill 
                     className="object-cover"
                 />
@@ -40,15 +40,15 @@ const features = [
         )
     },
     {
-        icon: Users,
-        title: "Group Classes",
-        description: "Choose from over a myriad of professional & experienced teachers to be fluent in any language.",
-        color: "bg-rose-500",
+        icon: Award,
+        title: "AIR Benchmarking",
+        description: "Compare your scores with lakhs of aspirants across India to understand your standing.",
+        color: "bg-amber-600",
         visual: (
             <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-gray-800 transform group-hover:scale-105 transition-transform duration-500">
                 <Image 
-                    src="/images/marketing/group-classes.png" 
-                    alt="Group Classes" 
+                    src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=2070&auto=format&fit=crop" 
+                    alt="AIR Benchmarking" 
                     fill 
                     className="object-cover"
                 />
@@ -64,7 +64,7 @@ export function FeaturesGrid() {
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16 max-w-2xl mx-auto">
                     <h2 className="text-3xl md:text-4xl font-bold text-[#011E21] dark:text-white mb-6">
-                        We Make Language Learning Easy & Simpler
+                        Examsphere: Engineering & Medical Success
                     </h2>
                     <div className="h-1 w-20 bg-primary mx-auto rounded-full" />
                 </div>

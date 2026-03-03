@@ -18,18 +18,18 @@ const navigationItems: IMenu[] = [
   },
   {
     id: 2,
-    title: "JEE Prep",
-    url: "/courses?category=JEE",
+    title: "Courses",
+    url: "/courses",
   },
   {
     id: 3,
-    title: "NEET Prep",
-    url: "/courses?category=NEET",
+    title: "Live Sessions",
+    url: "/live-sessions",
   },
   {
     id: 4,
-    title: "Test Series",
-    url: "/test-series",
+    title: "Find Faculty",
+    url: "/find-teacher",
   },
   {
     id: 5,
@@ -37,6 +37,7 @@ const navigationItems: IMenu[] = [
     url: "/pricing",
   },
 ];
+// Author: Sanket
 
 export function Navbar({ settings }: { settings?: any }) {
   const { data: session, isPending } = authClient.useSession();

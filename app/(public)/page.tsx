@@ -21,7 +21,7 @@ import { ServicesSection } from "@/components/marketing/ServicesSection";
 import { FeaturesGrid } from "@/components/marketing/FeaturesGrid";
 import { AnimationWrapper } from "@/components/ui/animation-wrapper";
 import { CategoriesGrid } from "@/components/marketing/CategoriesGrid";
-import { PopularLanguages } from "@/components/marketing/PopularLanguages";
+import { PopularSubjects } from "@/components/marketing/PopularSubjects";
 import { FeaturedCourses } from "@/components/marketing/FeaturedCourses";
 import { StatsBar } from "@/components/marketing/StatsBar";
 import { VibeCard } from "@/components/marketing/vibe-card";
@@ -142,7 +142,7 @@ export default async function Home() {
 
       <CategoriesGrid categories={categories} />
 
-      <PopularLanguages />
+      <PopularSubjects />
 
       <ServicesSection />
 

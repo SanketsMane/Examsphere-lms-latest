@@ -43,14 +43,14 @@ async function main() {
     {
       name: 'Welcome Email',
       slug: 'welcome',
-      subject: 'Welcome to KIDOKOOL',
+      subject: 'Welcome to EXAMSPHERE',
       isActive: true,
       content: `
     <!DOCTYPE html>
     <html>
     <head>
       <meta charset="utf-8">
-      <title>Welcome to KIDOKOOL</title>
+      <title>Welcome to EXAMSPHERE</title>
       <style>
         body { font-family: sans-serif; background-color: #f5f5f5; padding: 20px; }
         .container { max-width: 600px; margin: 0 auto; background: #ffffff; border: 1px solid #e5e5e5; padding: 20px; }
@@ -58,7 +58,7 @@ async function main() {
     </head>
     <body>
       <div class="container">
-        <h2>Welcome to KIDOKOOL!</h2>
+        <h2>Welcome to EXAMSPHERE!</h2>
         <p>Hi \${userName},</p>
         <p>We are excited to have you on board. Explore our courses and start learning today!</p>
         <a href="\${platformUrl}" style="background:#000;color:#fff;padding:10px 20px;text-decoration:none;">Go to Dashboard</a>
@@ -124,7 +124,7 @@ async function main() {
         <body style="font-family: sans-serif; padding: 20px;">
             <h3>Verification Successful</h3>
             <p>Hi \${userName},</p>
-            <p>Your documents have been verified successfully! You are one step closer to teaching on Kidokool.</p>
+            <p>Your documents have been verified successfully! You are one step closer to teaching on Examsphere.</p>
             <a href="\${dashboardUrl}" style="background:#000;color:#fff;padding:10px 20px;text-decoration:none;">Go to Dashboard</a>
         </body>
         </html>
@@ -272,7 +272,7 @@ async function main() {
         <body style="font-family: sans-serif; padding: 20px;">
             <h3>Course Published</h3>
             <p>Hi \${userName},</p>
-            <p>Great news! Your course <strong>\${courseTitle}</strong> has been approved and is now live on Kidokool.</p>
+            <p>Great news! Your course <strong>\${courseTitle}</strong> has been approved and is now live on Examsphere.</p>
             <a href="\${courseUrl}" style="background:#000;color:#fff;padding:10px 20px;text-decoration:none;">View Course</a>
         </body>
         </html>

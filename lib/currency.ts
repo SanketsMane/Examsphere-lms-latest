@@ -1,7 +1,7 @@
 
 /**
  * Author: Sanket
- * Unified currency utility for Kidokool LMS.
+ * Unified currency utility for Examsphere LMS.
  * Handles adaptive pricing based on user country.
  */
 

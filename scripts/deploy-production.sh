@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# AWS EC2 Deployment Script for KIDOKOOL LMS - Git Pull Method
+# AWS EC2 Deployment Script for EXAMSPHERE LMS - Git Pull Method
 # This script pulls the latest code from GitHub and deploys to EC2
 
 set -e  # Exit on error
@@ -8,9 +8,9 @@ set -e  # Exit on error
 # Configuration
 EC2_IP="16.176.20.69"
 EC2_USER="ubuntu"
-PEM_KEY="/Users/sanket/Documents/Kidokool-LMS/Kidokool-latest-key.pem"
-APP_NAME="kidokool-lms"
-REMOTE_DIR="/home/ubuntu/kidokool-lms"
+PEM_KEY="/Users/sanket/Documents/Examsphere-LMS/Examsphere-latest-key.pem"
+APP_NAME="examsphere-lms"
+REMOTE_DIR="/home/ubuntu/examsphere-lms"
 REPO_URL="https://github.com/SanketsMane/Examsphere-lms.git"
 
 # Colors for output
@@ -21,7 +21,7 @@ YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
 echo -e "${BLUE}========================================${NC}"
-echo -e "${BLUE}  KIDOKOOL LMS - Production Deployment${NC}"
+echo -e "${BLUE}  EXAMSPHERE LMS - Production Deployment${NC}"
 echo -e "${BLUE}========================================${NC}"
 
 # Check if PEM key exists
@@ -58,9 +58,9 @@ cd $REMOTE_DIR
 if [ ! -d ".git" ]; then
     echo "Not a git repository. Cloning from GitHub..."
     cd /home/ubuntu
-    rm -rf kidokool-lms
-    git clone $REPO_URL kidokool-lms
-    cd kidokool-lms
+    rm -rf examsphere-lms
+    git clone $REPO_URL examsphere-lms
+    cd examsphere-lms
 else
     echo "Pulling latest code from GitHub..."
     git fetch origin
@@ -98,15 +98,15 @@ cp -r .next/static/* .next/standalone/.next/static/
 # Restart PM2 process
 echo "Restarting application..."
 # We use node to start the standalone server
-pm2 stop kidokool-lms || true
-pm2 delete kidokool-lms || true
+pm2 stop examsphere-lms || true
+pm2 delete examsphere-lms || true
 # Need to set PORT explicitly for standalone server
-PORT=3000 pm2 start .next/standalone/server.js --name "kidokool-lms"
+PORT=3000 pm2 start .next/standalone/server.js --name "examsphere-lms"
 
 # Show status
 echo ""
 echo "Application Status:"
-pm2 status kidokool-lms
+pm2 status examsphere-lms
 
 ENDSSH
 
@@ -115,8 +115,8 @@ echo -e "${GREEN}  Deployment Complete!${NC}"
 echo -e "${GREEN}========================================${NC}"
 echo -e "${BLUE}Application URL: http://$EC2_IP:3000${NC}"
 echo -e "${BLUE}Admin Broadcasts: http://$EC2_IP:3000/admin/broadcasts${NC}"
-echo -e "${BLUE}To view logs: ssh -i $PEM_KEY $EC2_USER@$EC2_IP 'pm2 logs kidokool-lms'${NC}"
-echo -e "${BLUE}To restart: ssh -i $PEM_KEY $EC2_USER@$EC2_IP 'pm2 restart kidokool-lms'${NC}"
+echo -e "${BLUE}To view logs: ssh -i $PEM_KEY $EC2_USER@$EC2_IP 'pm2 logs examsphere-lms'${NC}"
+echo -e "${BLUE}To restart: ssh -i $PEM_KEY $EC2_USER@$EC2_IP 'pm2 restart examsphere-lms'${NC}"
 echo -e "${GREEN}========================================${NC}"
 
 echo -e "${YELLOW}Next Steps:${NC}"

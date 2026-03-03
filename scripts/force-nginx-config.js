@@ -4,7 +4,7 @@ const fs = require('fs');
 const config = `
 server {
     listen 80;
-    server_name kidokool.xyz www.kidokool.xyz;
+    server_name examsphere.xyz www.examsphere.xyz;
 
     location / {
         proxy_pass http://localhost:3000;
@@ -22,5 +22,5 @@ server {
 `;
 
 // Overwrite the file directly
-fs.writeFileSync('/etc/nginx/sites-available/kidokool', config);
-console.log('Overwrote Nginx config at /etc/nginx/sites-available/kidokool');
+fs.writeFileSync('/etc/nginx/sites-available/examsphere', config);
+console.log('Overwrote Nginx config at /etc/nginx/sites-available/examsphere');

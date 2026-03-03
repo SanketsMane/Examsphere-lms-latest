@@ -108,7 +108,7 @@ export async function updateSiteSettings(prevState: any, formData: FormData) {
         } else {
             await (prisma.siteSettings as any).create({
                 data: {
-                    siteName: siteName || "Kidokool LMS",
+                    siteName: siteName || "Examsphere LMS",
                     siteUrl: siteUrl || "",
                     logo,
                     favicon,

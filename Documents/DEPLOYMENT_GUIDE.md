@@ -2,7 +2,7 @@
 
 ## Production Deployment
 
-The `kidokool-lms` project is configured for continuous deployment.
+The `examsphere-lms` project is configured for continuous deployment.
 
 ### 1. Push to Main
 The primary deployment method is pushing to the `main` branch. This triggers the connected CI/CD pipeline (e.g., Vercel, AWS Amplify, or a custom GitHub Action).

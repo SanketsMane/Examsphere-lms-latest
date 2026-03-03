@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# AWS EC2 Deployment Script for KIDOKOOL LMS
+# AWS EC2 Deployment Script for EXAMSPHERE LMS
 # This script deploys the Next.js application to EC2
 
 set -e  # Exit on error
@@ -8,10 +8,10 @@ set -e  # Exit on error
 # Configuration
 EC2_IP="16.176.20.69"
 EC2_USER="ubuntu"
-PEM_KEY="/Users/sanket/Documents/Kidokool-LMS/Kidokool-latest-key.pem"
-APP_NAME="kidokool-lms"
-REMOTE_DIR="/home/ubuntu/kidokool-lms"
-LOCAL_DIR="/Users/sanket/Documents/Kidokool-LMS"
+PEM_KEY="/Users/sanket/Documents/Examsphere-LMS/Examsphere-latest-key.pem"
+APP_NAME="examsphere-lms"
+REMOTE_DIR="/home/ubuntu/examsphere-lms"
+LOCAL_DIR="/Users/sanket/Documents/Examsphere-LMS"
 
 # Colors for output
 GREEN='\033[0;32m'
@@ -20,7 +20,7 @@ RED='\033[0;31m'
 NC='\033[0m' # No Color
 
 echo -e "${BLUE}========================================${NC}"
-echo -e "${BLUE}  KIDOKOOL LMS - AWS EC2 Deployment${NC}"
+echo -e "${BLUE}  EXAMSPHERE LMS - AWS EC2 Deployment${NC}"
 echo -e "${BLUE}========================================${NC}"
 
 # Check if PEM key exists
@@ -75,7 +75,7 @@ fi
 echo -e "${GREEN}Building and starting application on EC2...${NC}"
 ssh -i "$PEM_KEY" "$EC2_USER@$EC2_IP" << 'ENDSSH'
 set -e
-cd /home/ubuntu/kidokool-lms
+cd /home/ubuntu/examsphere-lms
 
 # 1. Install Dependencies
 echo "📦 Installing dependencies..."
@@ -104,11 +104,11 @@ npm run build
 echo "♻️ Restarting server..."
     # Using standard start to avoid standalone issues - Always restart
     echo "Stopping existing process..."
-    pm2 stop kidokool-lms || true
-    pm2 delete kidokool-lms || true
+    pm2 stop examsphere-lms || true
+    pm2 delete examsphere-lms || true
     
     echo "Starting new process with npm start..."
-    pm2 start npm --name "kidokool-lms" -- start
+    pm2 start npm --name "examsphere-lms" -- start
 
 # Save PM2 list so it restarts on reboot
 pm2 save
@@ -120,5 +120,5 @@ echo -e "${GREEN}========================================${NC}"
 echo -e "${GREEN}  Deployment Complete!${NC}"
 echo -e "${GREEN}========================================${NC}"
 echo -e "${BLUE}Application URL: http://$EC2_IP:3000${NC}"
-echo -e "${BLUE}To view logs: ssh -i $PEM_KEY $EC2_USER@$EC2_IP 'docker logs -f kidokool-lms'${NC}"
+echo -e "${BLUE}To view logs: ssh -i $PEM_KEY $EC2_USER@$EC2_IP 'docker logs -f examsphere-lms'${NC}"
 echo -e "${GREEN}========================================${NC}"

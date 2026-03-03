@@ -10,44 +10,44 @@ import Link from "next/link";
 const tabs = [
     {
         id: "courses",
-        label: "Online Courses",
-        title: "We have best online courses at one place with expert tutors",
+        label: "Structured Prep",
+        title: "Comprehensive syllabus coverage with AIR-focused material",
         features: [
-            "Certificate Available along-with courses.",
-            "Full Practice Exam with Explanations included!",
-            "Downloadable Assets available in the course",
-            "24x7 teacher's support available",
+            "JEE/NEET/CET Structured Curriculum",
+            "Previous Year Questions (PYQs) with Solutions",
+            "Digital Study Material & Notes",
+            "Performance Analytics Dashboard",
         ],
-        image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop", // Student with laptop
-        color: "bg-rose-500",
+        image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop",
+        color: "bg-indigo-600",
         link: "/courses"
     },
     {
         id: "live",
-        label: "1-on-1 Live Session",
-        title: "Personalized learning with dedicated expert tutors",
+        label: "Doubt Clearing",
+        title: "Get your doubts resolved instantly by subject matter experts",
         features: [
-            "Real-time interaction with instructors",
-            "Customized curriculum to fit your needs",
-            "Instant feedback and doubt resolution",
-            "Flexible scheduling options",
+            "Real-time interaction with Faculty",
+            "Step-by-step solution for complex HCV/NCERT problems",
+            "Personalized Attention on weak topics",
+            "Instant Feedback on mock performance",
         ],
-        image: "https://images.unsplash.com/photo-1590650046871-92c887180603?q=80&w=2070&auto=format&fit=crop", // Video call
-        color: "bg-blue-500",
+        image: "https://images.unsplash.com/photo-1590650046871-92c887180603?q=80&w=2070&auto=format&fit=crop",
+        color: "bg-emerald-600",
         link: "/find-teacher"
     },
     {
         id: "group",
-        label: "Group Classes",
-        title: "Collaborative learning in small, focused groups",
+        label: "Live Masterclasses",
+        title: "Learn from top-rankers and HODs in interactive group sessions",
         features: [
-            "Learn with peers and share knowledge",
-            "Cost-effective alternative to 1-on-1",
-            "Interactive group activities",
-            "Regular scheduled sessions",
+            "Physics, Chem, Math Masterclasses",
+            "Direct learning from IIT/Medical Graduates",
+            "Competitive Peer Group environment",
+            "Recorded Sessions for Revision",
         ],
-        image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop", // Group study
-        color: "bg-amber-500",
+        image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop",
+        color: "bg-amber-600",
         link: "/live-sessions"
     },
 ];
@@ -170,9 +170,9 @@ export function ServicesSection() {
                                         ))}
                                     </ul>
 
-                                    <Button size="lg" className="rounded-full px-6 h-11 text-sm font-bold bg-[#4FB5C6] hover:bg-[#3ca0b0] text-white" asChild>
+                                    <Button size="lg" className="rounded-full px-6 h-11 text-sm font-bold bg-primary hover:bg-primary/90 text-white" asChild>
                                         <Link href={(activeContent as any).link || "/"}>
-                                            View All {activeContent.label.split(' ')[0]} <ArrowRight className="ml-2 w-4 h-4" />
+                                            View {activeContent.label} <ArrowRight className="ml-2 w-4 h-4" />
                                         </Link>
                                     </Button>
                                 </div>

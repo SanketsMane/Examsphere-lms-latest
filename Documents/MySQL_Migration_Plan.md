@@ -14,22 +14,22 @@ This plan outlines the steps required to migrate the project's database from Pos
 
 ### Database Configuration
 
-#### [MODIFY] [schema.prisma](file:///Users/sanket/Documents/Kidokool-LMS/prisma/schema.prisma)
+#### [MODIFY] [schema.prisma](file:///Users/sanket/Documents/Examsphere-LMS/prisma/schema.prisma)
 - Change `datasource db` provider from `postgresql` to `mysql`.
 - Convert all `String[]` fields to `Json` (e.g., `tags String[]` -> `tags Json`).
 
 ### Library Updates
 
-#### [MODIFY] [auth.ts](file:///Users/sanket/Documents/Kidokool-LMS/lib/auth.ts)
+#### [MODIFY] [auth.ts](file:///Users/sanket/Documents/Examsphere-LMS/lib/auth.ts)
 - Change `prismaAdapter` provider from `postgresql` to `mysql`.
 
-#### [MODIFY] [backup-system.ts](file:///Users/sanket/Documents/Kidokool-LMS/lib/backup-system.ts)
+#### [MODIFY] [backup-system.ts](file:///Users/sanket/Documents/Examsphere-LMS/lib/backup-system.ts)
 - Update `backupDatabase` method to use `mysqldump`.
 - Update `restoreDatabase` method to use `mysql`.
 
 ### Environment Configuration
 
-#### [MODIFY] [.env](file:///Users/sanket/Documents/Kidokool-LMS/.env)
+#### [MODIFY] [.env](file:///Users/sanket/Documents/Examsphere-LMS/.env)
 - Update `DATABASE_URL` to use `mysql://` protocol.
 
 ## Verification Plan

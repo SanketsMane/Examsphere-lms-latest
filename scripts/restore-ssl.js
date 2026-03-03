@@ -4,16 +4,16 @@ const fs = require('fs');
 const config = `
 server {
     listen 80;
-    server_name kidokool.xyz www.kidokool.xyz;
+    server_name examsphere.xyz www.examsphere.xyz;
     return 301 https://$host$request_uri;
 }
 
 server {
     listen 443 ssl;
-    server_name kidokool.xyz www.kidokool.xyz;
+    server_name examsphere.xyz www.examsphere.xyz;
 
-    ssl_certificate /etc/letsencrypt/live/kidokool.xyz/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/kidokool.xyz/privkey.pem;
+    ssl_certificate /etc/letsencrypt/live/examsphere.xyz/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/examsphere.xyz/privkey.pem;
     include /etc/letsencrypt/options-ssl-nginx.conf;
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
 
@@ -32,5 +32,5 @@ server {
 }
 `;
 
-fs.writeFileSync('/etc/nginx/sites-available/kidokool', config);
+fs.writeFileSync('/etc/nginx/sites-available/examsphere', config);
 console.log('Restored SSL Nginx config.');

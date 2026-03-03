@@ -7,7 +7,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { SidebarMenuButton, SidebarMenuItem, useSidebar } from "@/components/ui/sidebar";
 
-export function TeachOnKidokoolCTA() {
+export function TeachOnExamsphereCTA() {
     const pathname = usePathname();
     const { state } = useSidebar();
     const isCollapsed = state === "collapsed";
@@ -17,7 +17,7 @@ export function TeachOnKidokoolCTA() {
             <SidebarMenuButton
                 asChild
                 className="group relative overflow-hidden transition-all duration-300 hover:bg-transparent"
-                tooltip="Teach on Kidokool"
+                tooltip="Teach on Examsphere"
             >
                 <Link
                     href="/register/teacher"
@@ -40,7 +40,7 @@ export function TeachOnKidokoolCTA() {
                     {/* Text content - Hidden when collapsed */}
                     {!isCollapsed && (
                         <div className="relative z-10 flex flex-col items-start leading-none opacity-100 transition-opacity duration-200">
-                            <span className="text-sm font-bold tracking-tight">Teach on Kidokool</span>
+                            <span className="text-sm font-bold tracking-tight">Teach on Examsphere</span>
                             <span className="text-[10px] text-white/80 font-medium mt-0.5">Start your journey</span>
                         </div>
                     )}

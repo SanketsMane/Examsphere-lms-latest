@@ -34,7 +34,7 @@ Make sure your `.env.local` has the correct email settings:
 EMAIL_SERVICE="gmail"
 EMAIL_USER="bksun170882@gmail.com"
 EMAIL_PASS="your-app-password"
-EMAIL_FROM="KIDOKOOL <bksun170882@gmail.com>"
+EMAIL_FROM="EXAMSPHERE <bksun170882@gmail.com>"
 ```
 
 ## Role-Based Redirects
