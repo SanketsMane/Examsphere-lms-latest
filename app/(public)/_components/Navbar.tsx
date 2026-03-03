@@ -18,18 +18,18 @@ const navigationItems: IMenu[] = [
   },
   {
     id: 2,
-    title: "Courses",
-    url: "/courses",
+    title: "JEE Prep",
+    url: "/courses?category=JEE",
   },
   {
     id: 3,
-    title: "Group Classes",
-    url: "/live-sessions",
+    title: "NEET Prep",
+    url: "/courses?category=NEET",
   },
   {
     id: 4,
-    title: "Teachers",
-    url: "/find-teacher",
+    title: "Test Series",
+    url: "/test-series",
   },
   {
     id: 5,
@@ -46,7 +46,7 @@ export function Navbar({ settings }: { settings?: any }) {
   const logoSrc = settings?.logo && settings.logo.trim() !== ""
     ? (settings.logo.startsWith('http') ? settings.logo : constructS3Url(settings.logo))
     : "/logo.png";
-  const siteName = settings?.siteName?.trim() || "";
+  const siteName = settings?.siteName?.trim() || "Examsphere";
   const logoSize = settings?.logoSize || 100;
 
   return (

@@ -32,34 +32,34 @@ import { getTopCategories } from "../data/marketing/get-marketing-data";
 
 const features = [
   {
-    icon: Video,
-    title: "Live Interactive Sessions",
-    description: "Join real-time classes with expert instructors, ask questions, and collaborate with peers worldwide."
+    icon: Target,
+    title: "Exam-Oriented Live Sessions",
+    description: "Daily interactive classes focused on JEE, NEET, and CET patterns with real-time doubt clearing."
   },
   {
-    icon: BookOpen,
-    title: "Comprehensive Course Library",
-    description: "Access our growing library of courses across programming, business, design, and more."
-  },
-  {
-    icon: MessageSquare,
-    title: "AI-Powered Learning Assistant",
-    description: "Get personalized recommendations and instant help with our intelligent tutoring system."
-  },
-  {
-    icon: Trophy,
-    title: "Certification & Badges",
-    description: "Earn industry-recognized certificates and digital badges to showcase your achievements."
+    icon: FileText,
+    title: "Vast MCQ Question Bank",
+    description: "Access over 50,000+ practice questions with step-by-step video solutions for every concept."
   },
   {
     icon: BarChart3,
-    title: "Progress Analytics",
-    description: "Track your learning journey with detailed analytics and performance insights."
+    title: "Real-Time CBT Mock Tests",
+    description: "Experience the actual exam environment with our Computer Based Test (CBT) simulation platform."
   },
   {
-    icon: Globe,
-    title: "Global Community",
-    description: "Connect with learners worldwide, join study groups, and participate in coding challenges."
+    icon: Lightbulb,
+    title: "Concept Master Classes",
+    description: "Deep-dive into Physics, Chemistry, and Math with masterclasses from top-tier faculty."
+  },
+  {
+    icon: Award,
+    title: "All India Ranking (AIR)",
+    description: "Compare your performance with aspirants across India and identify your weak areas instantly."
+  },
+  {
+    icon: Shield,
+    title: "Structured Study Planner",
+    description: "Get a personalized roadmap to cover the entire XII & XI syllabus well before the exam date."
   }
 ];
 
@@ -67,8 +67,6 @@ export const dynamic = "force-dynamic";
 
 export default async function Home() {
   const session = await getSessionWithRole();
-
-  // ... (existing checks)
 
   // Fetch Real Data
   const broadcasts = await getActiveBroadcasts();
@@ -84,70 +82,58 @@ export default async function Home() {
     take: 9
   });
 
-  const stats = [
-    { icon: BookOpen, label: "Total Courses", value: `${courseCount}+` },
-    { icon: Users, label: "Active Students", value: `${studentCount}+` },
-    { icon: Award, label: "Expert Instructors", value: `${instructorCount}+` },
-  ];
-
   return (
     <AnimationWrapper className="min-h-screen bg-background font-sans">
       {/* --- BROADCAST BANNER --- */}
       <BroadcastBanner broadcasts={broadcasts} />
       
-      {/* ... Hero Section ... */}
-      
-      {/* ... Hero Section ... */}
       <HeroSection
         title={
           <>
-            A smarter way to Learn <br /> <span className="text-primary">and grow</span>
+            Master your Entrance <br /> <span className="text-primary italic font-serif">Exams with Confidence</span>
           </>
         }
-        subtitle="Kidokool is here for you with various courses & materials from skilled tutors all around the world."
+        subtitle="Examsphere provide top-tier coaching and materials for JEE, NEET, and CET from expert faculty across the nation."
         actions={[
           {
-            text: 'Join the Class',
+            text: 'Start Free Trial',
             href: '/register',
             variant: 'default' as const,
           },
           {
-            text: 'Browse Tutors',
-            href: '/find-teacher',
+            text: 'Explore Courses',
+            href: '/courses',
             variant: 'outline' as const,
           },
         ]}
         stats={[
           {
-            value: '6400',
-            label: 'Active students',
+            value: '50K+',
+            label: 'MCQs Solved',
+            icon: <Target className="h-5 w-5 text-muted-foreground" />,
+          },
+          {
+            value: '12K+',
+            label: 'Active Aspirants',
             icon: <Users className="h-5 w-5 text-muted-foreground" />,
           },
           {
-            value: '4,5K',
-            label: 'Tutors',
-            icon: <Award className="h-5 w-5 text-muted-foreground" />, // Using Award instead of Briefcase if Briefcase not imported, using existing import
-          },
-          {
-            value: 'Resources',
-            label: '',
-            icon: <BookOpen className="h-5 w-5 text-muted-foreground" />, // Using BookOpen as LinkIcon equivalent
+            value: 'AIR Focus',
+            label: 'National Benchmarking',
+            icon: <Award className="h-5 w-5 text-muted-foreground" />,
           },
         ]}
         images={[
-          'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=2070&auto=format&fit=crop',
-          'https://plus.unsplash.com/premium_photo-1663054774427-55adfb2be76f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGVvcGxlfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=900?q=80&w=2070&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2070&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1544377193-33dcf4d68fb5?q=80&w=2070&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2070&auto=format&fit=crop',
         ]}
       />
 
-      {/* ... Stats Bar ... */}
       <StatsBar />
 
-      {/* ... Vibe Card ... */}
       <VibeCard />
 
-      {/* ... Features ... */}
       <FeaturesGrid />
 
       <UpcomingGroupClasses />
@@ -163,8 +149,6 @@ export default async function Home() {
       {/* --- REVIEWS --- */}
       <TestimonialsSectionV2 testimonials={testimonials} />
 
-
-
       {/* --- DUAL CTA --- */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
@@ -175,12 +159,12 @@ export default async function Home() {
                 <div className="h-12 w-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary mb-6">
                   <BookOpen className="h-6 w-6" />
                 </div>
-                <h3 className="text-3xl font-bold mb-4">Student</h3>
+                <h3 className="text-3xl font-bold mb-4">Aspirant</h3>
                 <p className="text-muted-foreground mb-8 text-lg">
-                  Access thousands of courses from industry experts and start your journey today.
+                  Get access to JEE/NEET structured courses, test series, and personalized MCQ practice.
                 </p>
                 <Link href="/register" className="inline-flex items-center px-6 py-3 rounded-lg bg-primary text-white font-bold hover:bg-primary/90 transition-colors">
-                  Start Learning <ArrowRight className="ml-2 h-4 w-4" />
+                  Start Preparation <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </div>
               <div className="absolute right-0 bottom-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] group-hover:bg-primary/10 transition-colors" />
@@ -192,12 +176,12 @@ export default async function Home() {
                 <div className="h-12 w-12 bg-white/10 rounded-xl flex items-center justify-center text-white mb-6">
                   <Users className="h-6 w-6" />
                 </div>
-                <h3 className="text-3xl font-bold mb-4">Teacher</h3>
+                <h3 className="text-3xl font-bold mb-4">Expert Faculty</h3>
                 <p className="text-gray-300 mb-8 text-lg">
-                  Share your knowledge, inspire students, and earn money by teaching what you love.
+                  Join India's most innovative platform to mentor students and share your expertise.
                 </p>
                 <Link href="/register/teacher" className="inline-flex items-center px-6 py-3 rounded-lg bg-white text-slate-900 font-bold hover:bg-gray-100 transition-colors">
-                  Become a Teacher <ArrowRight className="ml-2 h-4 w-4" />
+                  Join as Faculty <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </div>
               <div className="absolute right-0 bottom-0 w-64 h-64 bg-primary/20 rounded-full blur-[80px]" />
@@ -205,8 +189,6 @@ export default async function Home() {
           </div>
         </div>
       </section>
-
-
     </AnimationWrapper>
   );
 }

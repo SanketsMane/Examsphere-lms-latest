@@ -17,24 +17,25 @@ import { constructS3Url } from "@/lib/s3-utils";
 
 const defaultFooterLinks = {
   learn: [
-    { name: "Find Tutors", href: "/find-teacher" },
-    { name: "Online Courses", href: "/courses" },
-    { name: "Group Classes", href: "/live-sessions" },
+    { name: "JEE Prep", href: "/courses?category=JEE" },
+    { name: "NEET Prep", href: "/courses?category=NEET" },
+    { name: "CET Prep", href: "/courses?category=CET" },
+    { name: "Full Length Mock Tests", href: "/test-series" },
   ],
   teach: [
-    { name: "Become a Tutor", href: "/register/teacher" },
-    { name: "Teacher Rules", href: "/terms" },
-    { name: "Success Stories", href: "/testimonials-demo" },
-    { name: "Teacher Verification", href: "/teacher/verification" },
+    { name: "Join as Faculty", href: "/register/teacher" },
+    { name: "Faculty Guidelines", href: "/terms" },
+    { name: "Aspirant Stories", href: "/testimonials-demo" },
+    { name: "Teaching Verification", href: "/teacher/verification" },
   ],
   support: [
-    { name: "Help Center", href: "/help" },
+    { name: "Student Support", href: "/help" },
     { name: "Contact Us", href: "/contact" },
     { name: "FAQs", href: "/faq" },
-    { name: "Report Issue", href: "/report" },
+    { name: "Report Technical Issue", href: "/report" },
   ],
   company: [
-    { name: "About Us", href: "/about" },
+    { name: "About Examsphere", href: "/about" },
     { name: "Careers", href: "/careers" },
     { name: "Blog", href: "/blog" },
     { name: "Privacy Policy", href: "/privacy" },
@@ -67,15 +68,15 @@ export async function Footer() {
               <div className="relative w-10 h-10">
                   <Image 
                     src={logoSrc} 
-                    alt={settings?.siteName || "KIDOKOOL"} 
+                    alt={settings?.siteName || "Examsphere"} 
                     fill 
                     className="object-contain" 
                   />
               </div>
-              <span className="text-2xl font-bold text-white tracking-tight">{settings?.siteName || "KIDOKOOL"}</span>
+              <span className="text-2xl font-bold text-white tracking-tight">{settings?.siteName || "Examsphere"}</span>
             </Link>
             <p className="text-slate-400 leading-relaxed max-w-sm">
-              The world's leading online learning platform. Join millions of learners and instructors gathering to master new skills.
+              India's premier digital platform for JEE, NEET, and CET preparation. Master concepts, practice MCQs, and track your All India Rank with expert faculty.
             </p>
 
             <div className="flex items-center gap-4 text-sm text-slate-400 pt-4">
@@ -162,7 +163,7 @@ export async function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-slate-800 bg-[#060a15]">
         <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
-          <p>© {new Date().getFullYear()} KidoKool. All rights reserved. <span className="ml-2 text-slate-600">v1.0.1</span></p>
+          <p>© {new Date().getFullYear()} Examsphere. All rights reserved. <span className="ml-2 text-slate-600">v1.0.1</span></p>
           <div className="flex items-center gap-6">
             <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
             <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
